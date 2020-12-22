@@ -1,0 +1,110 @@
+{{> navBar}}
+
+<div class="container-flex new-form">
+
+    <div class="row justify-content-center align-items-center">
+
+        <div class="col-4" class="section-list">
+
+            <h2>{{name}} Recipe</h2>
+
+            <form action="/recipes/{{id}}/edit" method="post">
+
+                <label for="name">Name</label>
+                <input type="text" name="name" value="{{name}}"><br>
+
+
+                <label for="ingredients">Ingredients<button class="addIng add-btn">+</button></label><br>
+                {{#each ingredients}}
+                <input class="ingInput" type="text" name="ingredients" value="{{this}}"><br><br>
+                {{/each}}
+
+                <label for="steps">Steps<button class="addStep add-btn">+</button></label><br>
+                {{#each steps}}
+                <input class="stepInput" type="text" name="steps" value="{{this}}"><br><br>
+                {{/each}}
+
+                <label for="difficulty">Difficulty</label>
+                <select name="difficulty">
+
+                    <option>Easy</option>
+                    <option>Amateur</option>
+                    <option>Chef</option>
+
+
+                </select><br>
+
+                <button class="hover-btn btn" type="submit">Edit recipe</button>
+
+            </form>
+
+            <a class="hover-btn btn" href="/recipes">Go back</a>
+
+        </div>
+
+        <div class="col-6">
+
+            <img class="image bigger reveal fadeInRight" data-delay="300ms" src="/images/recipe-edit.jpg" alt="receta">
+
+            <div class="row">
+
+                <div class="col-9">
+
+                    <p class="quote edit reveal fadeInRight" data-delay="300ms">"Everything tastes better wrapped in a
+                        puff pastry"</p>
+
+                </div>
+
+            </div>
+
+            <img class="image bigger reveal fadeInRight" data-delay="1500ms" src="/images/puff.jpeg" alt="hojaldre">
+
+        </div>
+
+    </div>
+
+</div>
+
+{{> footer}}
+
+
+
+<script>
+
+    const buttonsIng = document.querySelectorAll('.addIng')
+
+    buttonsIng.forEach(elm => {
+
+        elm.onclick = () => {
+
+            const newInput = document.createElement('input')
+            newInput.placeholder = 'New ingredient'
+            newInput.name = 'ingredients'
+
+
+            const firstInput = document.querySelectorAll('.ingInput')[0]
+
+            document.querySelector('form').insertBefore(newInput, firstInput)
+
+        }
+    })
+
+    const buttonsStep = document.querySelectorAll('.addStep')
+
+    buttonsStep.forEach(elm => {
+
+        elm.onclick = () => {
+
+            const newInput = document.createElement('input')
+            newInput.placeholder = 'New step'
+            newInput.name = 'steps'
+
+
+            const firstInput = document.querySelectorAll('.stepInput')[0]
+
+            document.querySelector('form').insertBefore(newInput, firstInput)
+
+        }
+    })
+
+</script>

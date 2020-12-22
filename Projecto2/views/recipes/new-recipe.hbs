@@ -1,0 +1,62 @@
+{{> navBar}}
+
+<div class="container-flex new-form">
+
+    <div class="row justify-content-center align-items-start">
+
+        <div class="col-4 section-list">
+
+            <h2>New recipe</h2>
+
+            <form action="/recipes/new" method="post">
+
+                <label for="name">Name</label>
+                <input type="text" name="name"><br>
+
+                <label for="ingredients">Ingredients</label>
+                <input class="big-input" type="text" name="ingredients"><br>
+
+                <label for="steps">Steps</label>
+                <input class="big-input" type="text" name="steps"><br>
+
+                <label for="difficulty">Difficulty</label>
+                <select name="difficulty">
+
+                    <option>Easy</option>
+                    <option>Amateur</option>
+                    <option>Chef</option>
+
+                </select><br>
+
+                <button class="hover-btn" type="submit">Create recipe</button>
+
+            </form>
+
+            <a class="hover-btn" href="/recipes">Go back</a>
+
+        </div>
+
+        <div class="col-6">
+
+            <img class="image show fadeInRight" src="/images/receta-new.jpeg" alt="receta">
+
+            <div class="row justify-content-start">
+
+                <div class="col-8">
+
+                    <p class="quote show fadeInRight">"A recipe has no soul. You, as the cook, must bring soul to the
+                        recipe"</p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{{> footer}}

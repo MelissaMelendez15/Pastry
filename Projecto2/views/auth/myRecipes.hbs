@@ -1,0 +1,52 @@
+{{> navBar}}
+
+<div class="container-flex section">
+
+    <div class="row justify-content-around align-items-start">
+
+        <div class="col-3 section-list">
+
+            <h2>My Recipes</h2>
+
+            {{#each favourites}}
+
+            <ul class="recipeUl">
+
+                <li id="liRecipe">{{this}}
+
+                    <form class="myRecipeForm" action="/profile/myRecipes/{{this}}" method="post">
+
+                        <button class="hover-btn btn" type="submit">Delete</button>
+
+                    </form>
+                </li>
+
+            </ul>
+
+            {{/each}}
+
+            <a class="hover-btn btn" href="/welcome">Go back</a>
+
+        </div>
+
+        <div class="col-6">
+
+            <img class="image show fadeInRight" src="/images/tartas.jpg">
+
+            <div class="row justify-content-start">
+
+                <div class="col-9">
+
+                    <p class="quote mini showFadeInRight">"Eating is a necessity, but cooking is an art"</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{{> footer}}

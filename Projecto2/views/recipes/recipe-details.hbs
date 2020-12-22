@@ -1,0 +1,63 @@
+{{> navBar}}
+
+<div class="container-flex section">
+
+    <div class="row justify-content-center align-items-start">
+
+        <div class="col-4 section-list">
+
+            <h2>{{details.name}}</h2>
+
+            <p>Difficulty: {{details.difficulty}}</p>
+
+            <p>Ingredients</p>
+
+            <ul>
+
+                {{#each details.ingredients}}
+
+                <li>{{this}}</li>
+
+                {{/each}}
+
+            </ul>
+
+        </div>
+
+        <div class="col-7 section-list">
+
+            <p>Steps</p>
+
+            <ol>
+
+                {{#each details.steps}}
+
+                <li>{{this}}</li>
+
+                {{/each}}
+
+            </ol>
+
+            <hr>
+
+            <div class="row">
+
+                <a class="hover-btn btn" href="/recipes/{{details.id}}/edit">Edit recipe</a>
+
+                <form action="/recipes/{{details.id}}/favourites" method="post">
+
+                    <button class="hover-btn btn add-btn" type="submit">Add to My Recipes</button>
+
+                </form>
+
+                <a class="hover-btn btn" href="/recipes">Go back</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{{> footer}}

@@ -1,0 +1,95 @@
+<section class="show fadeIn">
+
+    {{> navBar}}
+
+    <div class="container" id="welcome">
+
+        <div class="glide">
+
+            <div class="glide__track" data-glide-el="track">
+
+                <ul class="glide__slides">
+
+                    <li class="glide__slide"><img src="/images/pastelCorazón.jpg"></li>
+
+                    <li class="glide__slide"><img src="/images/azules.jpeg"></li>
+
+                    <li class="glide__slide"><img src="/images/profi.jpeg"></li>
+
+                    <li class="glide__slide"><img src="/images/CinnamonRolls.jpg"></li>
+
+                    <li class="glide__slide"><img src="/images/cheescacke.jpeg"></li>
+
+                    <li class="glide__slide"><img src="/images/pie.jpeg"></li>
+
+                    <li class="glide__slide"><img src="/images/souffle.jpeg"></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <h3><span id="typeIt"></h3>
+
+
+        <div class="row justify-content-between">
+
+            <div class="col-md-3 welcome">
+
+                <a class="hover-btn" href="/places">Places</a>
+
+            </div>
+
+            <div class="col-md-3 welcome">
+
+                <a class="hover-btn" href="/recipes">Recipes</a>
+
+            </div>
+
+            <div class="col-md-3 welcome">
+
+                <a class="hover-btn" href="/profile">Profile</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+
+<script>
+    new TypeIt('#typeIt', {
+        speed: 150,
+        loop: true,
+        cursorChar: "_"
+    })
+        .type("It's funny", { delay: 1500 })
+        .delete(5)
+        .type("pastry", { delay: 1500 })
+        .delete(6)
+        .type("TartApp", { delay: 1500 })
+        .go();
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"
+    integrity="sha512-BXASbMmKLu+RC5TDnkupyhvrjiOQXILh/5zgIS8k5JAC71a73lNweVEg/X+9XJQ7GK22PH9WpztY3zqrji+xrQ=="
+    crossorigin="anonymous"></script>
+
+<script>
+    new Glide('.glide', {
+        gap: 20,
+        bound: true,
+        startAt: 0,
+        perView: 3,
+        autoplay: 2000
+    }).mount()
+
+</script>
