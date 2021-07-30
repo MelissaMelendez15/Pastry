@@ -4,7 +4,7 @@ Second Module Project for Ironhack Wed Development Bootcamp
 
 - Name: TartApp
 
-- Authors: Belén Olías Ericsson & Melissa Meléndez Zamora,
+- Authors:Melissa Meléndez Zamora,
 
 - v1.0.0
 
